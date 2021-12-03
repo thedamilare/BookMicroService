@@ -11,6 +11,13 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+// $router->get('/', function () use ($router) {
+//     return $router->app->version();
+// });
+
+Route::get('books', 'BookController@index');
+Route::post('books', 'BookController@store');
+Route::get('books/{book}', 'BookController@show');
+Route::put('books/{book}', 'BookController@update');
+Route::patch('books/{book}', 'BookController@update');
+Route::delete('books/{book}', 'BookController@destroy');
